@@ -42,9 +42,11 @@ plt.legend()
 plt.show()
 
 #Step 3 Correlation
-fig2 = plt.figure()
 corr_matrix = df.corr()
-sns.heatmap(np.abs(corr_matrix))
+plt.figure(figsize=(8, 6))
+sns.heatmap(corr_matrix, annot=True, cmap="coolwarm", linewidths=0.5)
+plt.title('Correlation Matrix of Features')
+plt.show()
 
 #Step 4 Classification
 # Assuming df is already defined and contains the 'Step' column.
