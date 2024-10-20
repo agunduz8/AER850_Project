@@ -140,8 +140,6 @@ def getScores(true,pred):
     print("Precision score: ", precision_score(true, pred, average='macro'))
     print("Accuracy score: ", accuracy_score(true, pred))
     print("F1 score: ",f1_score(true, pred, average='weighted'))
-    
-    
     return None
 
 #Model 1
