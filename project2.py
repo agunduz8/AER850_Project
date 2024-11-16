@@ -21,7 +21,7 @@ train_path = './Data/train'
 val_path = './Data/valid'
 test_path = './Data/test'
 
-print("Importing Data...")
+
 
 # Data augmentation for the training set
 train_datagen = ImageDataGenerator(
@@ -62,15 +62,13 @@ model = Sequential([
     
     layers.Conv2D(128, (3, 3), activation='relu'),
     layers.MaxPooling2D(pool_size=(2, 2)),
-    layers.Dropout(0.3),
     
     layers.Conv2D(128, (3, 3), activation='relu'),
     layers.MaxPooling2D(pool_size=(2, 2)),
-    layers.Dropout(0.3),
     
     layers.Conv2D(256, (3, 3), activation='relu'),
     layers.MaxPooling2D(pool_size=(2, 2)),
-    layers.Dropout(0.4),
+    layers.Dropout(0.3),
     
     layers.Flatten(),
     layers.Dense(512, activation='relu'),
@@ -100,7 +98,7 @@ history = model.fit(
 model.summary()
 
 # Save the trained model
-model.save("model_D.h5")
+model.save("model_1.h5")
 
 # Plot training and validation accuracy/loss
 acc = history.history['accuracy']
