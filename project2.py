@@ -21,8 +21,6 @@ train_path = './Data/train'
 val_path = './Data/valid'
 test_path = './Data/test'
 
-
-
 # Data augmentation for the training set
 train_datagen = ImageDataGenerator(
     rescale=1.0 / 255,
@@ -55,7 +53,7 @@ val_generator = val_datagen.flow_from_directory(
 
 print("Class indices:", train_generator.class_indices)
 
-# CNN Model
+# CNN Model (4 Convolutional Layer, 2 Dense Layer)
 model = Sequential([
     layers.Conv2D(64, (3, 3), activation='relu', input_shape=input_shape),
     layers.MaxPooling2D(pool_size=(2, 2)),
